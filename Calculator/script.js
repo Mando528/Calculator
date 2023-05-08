@@ -20,6 +20,7 @@ function handleSymbol(symbol){
             runningResult = 0;
             buffer = "0";
             break;
+
         case '=':
             if(currentOperator === null){
                 return;
@@ -39,7 +40,10 @@ function handleSymbol(symbol){
                 buffer = buffer.substring(0,buffer.length-1);
             }
             break;
-        
+
+        case '(+/-)':
+            buffer = -buffer;
+            break;
         case '.':    
             if(buffer.includes(".")){
                 buffer = buffer;
